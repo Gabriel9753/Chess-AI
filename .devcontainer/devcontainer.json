@@ -33,6 +33,14 @@
 			"moby": true
 		}
 	},
+	"runArgs": [
+		"--gpus=all", 
+		// Network for DB access
+		// "--network=db_mssql_db_network",
+		"--network=host",
+		// Incrase /dev/shm size for ray
+		"--shm-size=12gb"
+	],
 	"containerEnv": {
 		"DEVCONTAINER_PATH_HOST": "${localWorkspaceFolder}"
 	}
