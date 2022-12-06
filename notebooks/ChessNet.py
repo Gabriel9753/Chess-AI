@@ -11,8 +11,6 @@ class Net(nn.Module):
         self.fc4 = nn.Linear(256, 1)
 
     def forward(self, x):
-        x = x.float()
-        x = x.reshape(x.shape[0], -1)
         x = F.relu(self.dropout(self.fc1(x)))
         x = F.relu(self.dropout(self.fc2(x)))
         x = F.relu(self.dropout(self.fc3(x)))
